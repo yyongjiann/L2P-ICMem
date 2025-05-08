@@ -1,0 +1,5 @@
+fixedbuffer.tar.gz
+**/__pycache__/**
+**/icmem_output/**
+*.out
+*.err
