@@ -24,12 +24,23 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-### 2. Install Requirements
+### 2. Install Requirements & Dataset
 
 Install the required packages:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Download the ICMD dataset to the specified directory:
+
+```bash
+# Create the directory if it doesn't exist
+mkdir -p baseline_1/local_datasets/
+
+# Download your dataset here
+# Example: wget [dataset_url] -P baseline_1/local_datasets/
+# Or copy your dataset files to: baseline_1/local_datasets/
 ```
 
 ### 3. Run PBS Script
