@@ -1,0 +1,477 @@
+| distributed init (rank 0): env://
+[rank0]:[W509 09:46:39.296235727 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+Task 1
+Training Samples: 1000
+Validation Samples: 430
+Replay Buffer Class Distribution: {1: 20, 4: 20}
+
+Task 2
+Training Samples: 540
+Validation Samples: 215
+Replay Buffer Class Distribution: {1: 20, 4: 20, 2: 20}
+
+Task 3
+Training Samples: 560
+Validation Samples: 215
+Replay Buffer Class Distribution: {1: 20, 4: 20, 2: 20, 0: 20}
+
+Task 4
+Training Samples: 580
+Validation Samples: 215
+Replay Buffer Class Distribution: {1: 20, 4: 20, 2: 20, 0: 20, 3: 20}
+
+Creating original model: vit_base_patch16_224_dino
+Creating model: vit_base_patch16_224_dino
+Namespace(subparser_name='icmem_l2p', batch_size=16, epochs=5, model='vit_base_patch16_224_dino', input_size=224, pretrained=True, drop=0.0, drop_path=0.0, opt='adam', opt_eps=1e-08, opt_betas=(0.9, 0.999), clip_grad=1.0, momentum=0.9, weight_decay=0.0, reinit_optimizer=True, sched='constant', lr=0.001, lr_noise=None, lr_noise_pct=0.67, lr_noise_std=1.0, warmup_lr=1e-06, min_lr=1e-05, decay_epochs=30, warmup_epochs=5, cooldown_epochs=10, patience_epochs=10, decay_rate=0.1, unscale_lr=True, color_jitter=None, aa=None, smoothing=0.1, train_interpolation='bicubic', reprob=0.0, remode='pixel', recount=1, data_path='local_datasets', dataset='Split-ICMem', baseline_file_high='high_mem_images.json', baseline_file_low='low_mem_images.json', baseline_mode='mixed', replay_size=20, shuffle='True', output_dir='icmem_output', device='cuda', seed=975, eval=False, num_workers=4, pin_mem=True, custom_weight_path=None, world_size=1, dist_url='env://', num_tasks=4, train_mask=True, task_inc=False, prompt_pool=True, size=10, length=5, top_k=5, initializer='uniform', prompt_key=True, prompt_key_init='uniform', use_prompt_mask=False, shared_prompt_pool=False, shared_prompt_key=False, batchwise_prompt=False, embedding_key='cls', predefined_key='', pull_constraint=True, pull_constraint_coeff=0.1, global_pool='token', head_type='prompt', freeze=['blocks', 'patch_embed', 'cls_token', 'norm', 'pos_embed'], print_freq=10, rank=0, gpu=0, distributed=True, dist_backend='nccl', nb_classes=5)
+number of params: 49925
+/home/users/ntu/yhuang07/myenv/lib/python3.11/site-packages/sklearn/manifold/_t_sne.py:1164: FutureWarning: 'n_iter' was renamed to 'max_iter' in version 1.5 and will be removed in 1.7.
+  warnings.warn(
+Start training for 5 epochs
+Task 1:
+  Train Classes: [1, 4] (2 classes)
+  Val Classes: [1, 4] (2 classes)
+  Training Samples: 1000
+  Validation Samples: 430
+
+Train: Epoch[ 1/10]  [ 0/63]  eta: 0:01:24  Lr: 0.001000  Loss: 0.6437  Acc@1: 75.0000 (75.0000)  Acc@5: 100.0000 (100.0000)  time: 1.3407  data: 0.2549  max mem: 2370
+Train: Epoch[ 1/10]  [10/63]  eta: 0:00:13  Lr: 0.001000  Loss: 0.3971  Acc@1: 75.0000 (71.0227)  Acc@5: 100.0000 (100.0000)  time: 0.2470  data: 0.0233  max mem: 2370
+Train: Epoch[ 1/10]  [20/63]  eta: 0:00:08  Lr: 0.001000  Loss: 0.3847  Acc@1: 81.2500 (76.7857)  Acc@5: 100.0000 (100.0000)  time: 0.1365  data: 0.0002  max mem: 2370
+Train: Epoch[ 1/10]  [30/63]  eta: 0:00:05  Lr: 0.001000  Loss: 0.2299  Acc@1: 93.7500 (82.4597)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2370
+Train: Epoch[ 1/10]  [40/63]  eta: 0:00:03  Lr: 0.001000  Loss: 0.2117  Acc@1: 93.7500 (83.9939)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 1/10]  [50/63]  eta: 0:00:02  Lr: 0.001000  Loss: 0.1783  Acc@1: 93.7500 (86.5196)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2370
+Train: Epoch[ 1/10]  [60/63]  eta: 0:00:00  Lr: 0.001000  Loss: 0.1200  Acc@1: 93.7500 (87.5000)  Acc@5: 100.0000 (100.0000)  time: 0.1353  data: 0.0001  max mem: 2370
+Train: Epoch[ 1/10]  [62/63]  eta: 0:00:00  Lr: 0.001000  Loss: 0.4642  Acc@1: 93.7500 (87.4000)  Acc@5: 100.0000 (100.0000)  time: 0.1327  data: 0.0001  max mem: 2370
+Train: Epoch[ 1/10] Total time: 0:00:09 (0.1546 s / it)
+Averaged stats: Lr: 0.001000  Loss: 0.4642  Acc@1: 93.7500 (87.4000)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[ 2/10]  [ 0/63]  eta: 0:00:18  Lr: 0.001000  Loss: 0.2751  Acc@1: 81.2500 (81.2500)  Acc@5: 100.0000 (100.0000)  time: 0.2960  data: 0.1593  max mem: 2370
+Train: Epoch[ 2/10]  [10/63]  eta: 0:00:07  Lr: 0.001000  Loss: 0.0714  Acc@1: 93.7500 (94.3182)  Acc@5: 100.0000 (100.0000)  time: 0.1501  data: 0.0146  max mem: 2370
+Train: Epoch[ 2/10]  [20/63]  eta: 0:00:06  Lr: 0.001000  Loss: 0.2727  Acc@1: 93.7500 (94.9405)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2370
+Train: Epoch[ 2/10]  [30/63]  eta: 0:00:04  Lr: 0.001000  Loss: -0.0185  Acc@1: 93.7500 (94.5565)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2370
+Train: Epoch[ 2/10]  [40/63]  eta: 0:00:03  Lr: 0.001000  Loss: 0.0340  Acc@1: 100.0000 (95.4268)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 2/10]  [50/63]  eta: 0:00:01  Lr: 0.001000  Loss: -0.0322  Acc@1: 100.0000 (95.8333)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 2/10]  [60/63]  eta: 0:00:00  Lr: 0.001000  Loss: 0.0872  Acc@1: 93.7500 (95.9016)  Acc@5: 100.0000 (100.0000)  time: 0.1353  data: 0.0001  max mem: 2370
+Train: Epoch[ 2/10]  [62/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0315  Acc@1: 100.0000 (96.0000)  Acc@5: 100.0000 (100.0000)  time: 0.1321  data: 0.0001  max mem: 2370
+Train: Epoch[ 2/10] Total time: 0:00:08 (0.1376 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.0315  Acc@1: 100.0000 (96.0000)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[ 3/10]  [ 0/63]  eta: 0:00:18  Lr: 0.001000  Loss: 0.0657  Acc@1: 93.7500 (93.7500)  Acc@5: 100.0000 (100.0000)  time: 0.2936  data: 0.1572  max mem: 2370
+Train: Epoch[ 3/10]  [10/63]  eta: 0:00:07  Lr: 0.001000  Loss: 0.0140  Acc@1: 93.7500 (93.1818)  Acc@5: 100.0000 (100.0000)  time: 0.1499  data: 0.0144  max mem: 2370
+Train: Epoch[ 3/10]  [20/63]  eta: 0:00:06  Lr: 0.001000  Loss: 0.3226  Acc@1: 93.7500 (93.1548)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0002  max mem: 2370
+Train: Epoch[ 3/10]  [30/63]  eta: 0:00:04  Lr: 0.001000  Loss: -0.0446  Acc@1: 93.7500 (93.9516)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2370
+Train: Epoch[ 3/10]  [40/63]  eta: 0:00:03  Lr: 0.001000  Loss: -0.0161  Acc@1: 100.0000 (95.1220)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2370
+Train: Epoch[ 3/10]  [50/63]  eta: 0:00:01  Lr: 0.001000  Loss: -0.0531  Acc@1: 100.0000 (95.8333)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0002  max mem: 2370
+Train: Epoch[ 3/10]  [60/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0143  Acc@1: 100.0000 (96.1066)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 3/10]  [62/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0205  Acc@1: 100.0000 (96.2000)  Acc@5: 100.0000 (100.0000)  time: 0.1322  data: 0.0001  max mem: 2370
+Train: Epoch[ 3/10] Total time: 0:00:08 (0.1376 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.0205  Acc@1: 100.0000 (96.2000)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[ 4/10]  [ 0/63]  eta: 0:00:19  Lr: 0.001000  Loss: -0.0424  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3072  data: 0.1705  max mem: 2370
+Train: Epoch[ 4/10]  [10/63]  eta: 0:00:08  Lr: 0.001000  Loss: -0.0560  Acc@1: 100.0000 (95.4545)  Acc@5: 100.0000 (100.0000)  time: 0.1511  data: 0.0156  max mem: 2370
+Train: Epoch[ 4/10]  [20/63]  eta: 0:00:06  Lr: 0.001000  Loss: 0.0109  Acc@1: 100.0000 (96.7262)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0002  max mem: 2370
+Train: Epoch[ 4/10]  [30/63]  eta: 0:00:04  Lr: 0.001000  Loss: -0.0705  Acc@1: 100.0000 (97.5806)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2370
+Train: Epoch[ 4/10]  [40/63]  eta: 0:00:03  Lr: 0.001000  Loss: -0.0533  Acc@1: 100.0000 (97.7134)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0002  max mem: 2370
+Train: Epoch[ 4/10]  [50/63]  eta: 0:00:01  Lr: 0.001000  Loss: 0.2686  Acc@1: 100.0000 (97.4265)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0001  max mem: 2370
+Train: Epoch[ 4/10]  [60/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0850  Acc@1: 100.0000 (97.8484)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 4/10]  [62/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0102  Acc@1: 100.0000 (97.9000)  Acc@5: 100.0000 (100.0000)  time: 0.1322  data: 0.0001  max mem: 2370
+Train: Epoch[ 4/10] Total time: 0:00:08 (0.1378 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.0102  Acc@1: 100.0000 (97.9000)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[ 5/10]  [ 0/63]  eta: 0:00:18  Lr: 0.001000  Loss: -0.0176  Acc@1: 93.7500 (93.7500)  Acc@5: 100.0000 (100.0000)  time: 0.2883  data: 0.1505  max mem: 2370
+Train: Epoch[ 5/10]  [10/63]  eta: 0:00:07  Lr: 0.001000  Loss: -0.0995  Acc@1: 100.0000 (98.8636)  Acc@5: 100.0000 (100.0000)  time: 0.1492  data: 0.0138  max mem: 2370
+Train: Epoch[ 5/10]  [20/63]  eta: 0:00:06  Lr: 0.001000  Loss: -0.0884  Acc@1: 100.0000 (98.8095)  Acc@5: 100.0000 (100.0000)  time: 0.1352  data: 0.0001  max mem: 2370
+Train: Epoch[ 5/10]  [30/63]  eta: 0:00:04  Lr: 0.001000  Loss: -0.0426  Acc@1: 100.0000 (97.3790)  Acc@5: 100.0000 (100.0000)  time: 0.1351  data: 0.0001  max mem: 2370
+Train: Epoch[ 5/10]  [40/63]  eta: 0:00:03  Lr: 0.001000  Loss: -0.0728  Acc@1: 93.7500 (97.2561)  Acc@5: 100.0000 (100.0000)  time: 0.1351  data: 0.0001  max mem: 2370
+Train: Epoch[ 5/10]  [50/63]  eta: 0:00:01  Lr: 0.001000  Loss: -0.0892  Acc@1: 100.0000 (97.4265)  Acc@5: 100.0000 (100.0000)  time: 0.1352  data: 0.0001  max mem: 2370
+Train: Epoch[ 5/10]  [60/63]  eta: 0:00:00  Lr: 0.001000  Loss: 0.0144  Acc@1: 100.0000 (97.5410)  Acc@5: 100.0000 (100.0000)  time: 0.1351  data: 0.0001  max mem: 2370
+Train: Epoch[ 5/10]  [62/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0921  Acc@1: 100.0000 (97.6000)  Acc@5: 100.0000 (100.0000)  time: 0.1319  data: 0.0001  max mem: 2370
+Train: Epoch[ 5/10] Total time: 0:00:08 (0.1374 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.0921  Acc@1: 100.0000 (97.6000)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[ 6/10]  [ 0/63]  eta: 0:00:18  Lr: 0.001000  Loss: -0.0965  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2914  data: 0.1548  max mem: 2370
+Train: Epoch[ 6/10]  [10/63]  eta: 0:00:07  Lr: 0.001000  Loss: -0.0890  Acc@1: 100.0000 (97.1591)  Acc@5: 100.0000 (100.0000)  time: 0.1497  data: 0.0142  max mem: 2370
+Train: Epoch[ 6/10]  [20/63]  eta: 0:00:06  Lr: 0.001000  Loss: 0.1210  Acc@1: 100.0000 (96.7262)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 6/10]  [30/63]  eta: 0:00:04  Lr: 0.001000  Loss: -0.1028  Acc@1: 100.0000 (97.5806)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2370
+Train: Epoch[ 6/10]  [40/63]  eta: 0:00:03  Lr: 0.001000  Loss: -0.1215  Acc@1: 100.0000 (97.8659)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 6/10]  [50/63]  eta: 0:00:01  Lr: 0.001000  Loss: -0.1107  Acc@1: 100.0000 (97.9167)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 6/10]  [60/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1166  Acc@1: 100.0000 (98.1557)  Acc@5: 100.0000 (100.0000)  time: 0.1353  data: 0.0001  max mem: 2370
+Train: Epoch[ 6/10]  [62/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1176  Acc@1: 100.0000 (98.1000)  Acc@5: 100.0000 (100.0000)  time: 0.1321  data: 0.0001  max mem: 2370
+Train: Epoch[ 6/10] Total time: 0:00:08 (0.1375 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1176  Acc@1: 100.0000 (98.1000)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[ 7/10]  [ 0/63]  eta: 0:00:18  Lr: 0.001000  Loss: -0.1199  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2938  data: 0.1569  max mem: 2370
+Train: Epoch[ 7/10]  [10/63]  eta: 0:00:07  Lr: 0.001000  Loss: -0.0127  Acc@1: 100.0000 (98.2955)  Acc@5: 100.0000 (100.0000)  time: 0.1499  data: 0.0144  max mem: 2370
+Train: Epoch[ 7/10]  [20/63]  eta: 0:00:06  Lr: 0.001000  Loss: -0.0453  Acc@1: 100.0000 (98.5119)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 7/10]  [30/63]  eta: 0:00:04  Lr: 0.001000  Loss: -0.1342  Acc@1: 100.0000 (98.3871)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2370
+Train: Epoch[ 7/10]  [40/63]  eta: 0:00:03  Lr: 0.001000  Loss: -0.1212  Acc@1: 100.0000 (98.4756)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0001  max mem: 2370
+Train: Epoch[ 7/10]  [50/63]  eta: 0:00:01  Lr: 0.001000  Loss: -0.1243  Acc@1: 100.0000 (98.1618)  Acc@5: 100.0000 (100.0000)  time: 0.1353  data: 0.0001  max mem: 2370
+Train: Epoch[ 7/10]  [60/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1225  Acc@1: 100.0000 (98.2582)  Acc@5: 100.0000 (100.0000)  time: 0.1351  data: 0.0001  max mem: 2370
+Train: Epoch[ 7/10]  [62/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1602  Acc@1: 100.0000 (98.1000)  Acc@5: 100.0000 (100.0000)  time: 0.1319  data: 0.0001  max mem: 2370
+Train: Epoch[ 7/10] Total time: 0:00:08 (0.1376 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1602  Acc@1: 100.0000 (98.1000)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[ 8/10]  [ 0/63]  eta: 0:00:19  Lr: 0.001000  Loss: -0.1260  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3039  data: 0.1667  max mem: 2370
+Train: Epoch[ 8/10]  [10/63]  eta: 0:00:07  Lr: 0.001000  Loss: -0.1490  Acc@1: 100.0000 (98.8636)  Acc@5: 100.0000 (100.0000)  time: 0.1508  data: 0.0153  max mem: 2370
+Train: Epoch[ 8/10]  [20/63]  eta: 0:00:06  Lr: 0.001000  Loss: -0.1033  Acc@1: 100.0000 (98.5119)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0001  max mem: 2370
+Train: Epoch[ 8/10]  [30/63]  eta: 0:00:04  Lr: 0.001000  Loss: -0.1181  Acc@1: 100.0000 (98.7903)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 8/10]  [40/63]  eta: 0:00:03  Lr: 0.001000  Loss: -0.1450  Acc@1: 100.0000 (98.6280)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 8/10]  [50/63]  eta: 0:00:01  Lr: 0.001000  Loss: -0.1564  Acc@1: 100.0000 (98.5294)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2370
+Train: Epoch[ 8/10]  [60/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1595  Acc@1: 100.0000 (98.7705)  Acc@5: 100.0000 (100.0000)  time: 0.1353  data: 0.0001  max mem: 2370
+Train: Epoch[ 8/10]  [62/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1096  Acc@1: 100.0000 (98.8000)  Acc@5: 100.0000 (100.0000)  time: 0.1321  data: 0.0001  max mem: 2370
+Train: Epoch[ 8/10] Total time: 0:00:08 (0.1377 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1096  Acc@1: 100.0000 (98.8000)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[ 9/10]  [ 0/63]  eta: 0:00:21  Lr: 0.001000  Loss: -0.1289  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3342  data: 0.1974  max mem: 2370
+Train: Epoch[ 9/10]  [10/63]  eta: 0:00:08  Lr: 0.001000  Loss: -0.0044  Acc@1: 100.0000 (98.8636)  Acc@5: 100.0000 (100.0000)  time: 0.1536  data: 0.0181  max mem: 2370
+Train: Epoch[ 9/10]  [20/63]  eta: 0:00:06  Lr: 0.001000  Loss: 0.0099  Acc@1: 100.0000 (98.8095)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0001  max mem: 2370
+Train: Epoch[ 9/10]  [30/63]  eta: 0:00:04  Lr: 0.001000  Loss: 0.3483  Acc@1: 100.0000 (98.3871)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2370
+Train: Epoch[ 9/10]  [40/63]  eta: 0:00:03  Lr: 0.001000  Loss: -0.1129  Acc@1: 100.0000 (98.3232)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0001  max mem: 2370
+Train: Epoch[ 9/10]  [50/63]  eta: 0:00:01  Lr: 0.001000  Loss: -0.1746  Acc@1: 100.0000 (98.2843)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0001  max mem: 2370
+Train: Epoch[ 9/10]  [60/63]  eta: 0:00:00  Lr: 0.001000  Loss: 0.2095  Acc@1: 100.0000 (98.2582)  Acc@5: 100.0000 (100.0000)  time: 0.1353  data: 0.0001  max mem: 2370
+Train: Epoch[ 9/10]  [62/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1945  Acc@1: 100.0000 (98.3000)  Acc@5: 100.0000 (100.0000)  time: 0.1321  data: 0.0001  max mem: 2370
+Train: Epoch[ 9/10] Total time: 0:00:08 (0.1381 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1945  Acc@1: 100.0000 (98.3000)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[10/10]  [ 0/63]  eta: 0:00:18  Lr: 0.001000  Loss: -0.1811  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2873  data: 0.1505  max mem: 2370
+Train: Epoch[10/10]  [10/63]  eta: 0:00:07  Lr: 0.001000  Loss: -0.1695  Acc@1: 100.0000 (98.2955)  Acc@5: 100.0000 (100.0000)  time: 0.1491  data: 0.0138  max mem: 2370
+Train: Epoch[10/10]  [20/63]  eta: 0:00:06  Lr: 0.001000  Loss: -0.1612  Acc@1: 100.0000 (98.5119)  Acc@5: 100.0000 (100.0000)  time: 0.1352  data: 0.0001  max mem: 2370
+Train: Epoch[10/10]  [30/63]  eta: 0:00:04  Lr: 0.001000  Loss: -0.0752  Acc@1: 100.0000 (98.3871)  Acc@5: 100.0000 (100.0000)  time: 0.1352  data: 0.0001  max mem: 2370
+Train: Epoch[10/10]  [40/63]  eta: 0:00:03  Lr: 0.001000  Loss: -0.1779  Acc@1: 100.0000 (98.1707)  Acc@5: 100.0000 (100.0000)  time: 0.1352  data: 0.0001  max mem: 2370
+Train: Epoch[10/10]  [50/63]  eta: 0:00:01  Lr: 0.001000  Loss: -0.1755  Acc@1: 100.0000 (98.5294)  Acc@5: 100.0000 (100.0000)  time: 0.1352  data: 0.0001  max mem: 2370
+Train: Epoch[10/10]  [60/63]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1828  Acc@1: 100.0000 (98.7705)  Acc@5: 100.0000 (100.0000)  time: 0.1351  data: 0.0001  max mem: 2370
+Train: Epoch[10/10]  [62/63]  eta: 0:00:00  Lr: 0.001000  Loss: 0.0138  Acc@1: 100.0000 (98.7000)  Acc@5: 100.0000 (100.0000)  time: 0.1319  data: 0.0001  max mem: 2370
+Train: Epoch[10/10] Total time: 0:00:08 (0.1375 s / it)
+Averaged stats: Lr: 0.001000  Loss: 0.0138  Acc@1: 100.0000 (98.7000)  Acc@5: 100.0000 (100.0000)
+Standard Deviation of Similarities for task 0: 0.1598
+/home/users/ntu/yhuang07/myenv/lib/python3.11/site-packages/sklearn/manifold/_t_sne.py:1164: FutureWarning: 'n_iter' was renamed to 'max_iter' in version 1.5 and will be removed in 1.7.
+  warnings.warn(
+torch.Size([10, 5, 768])
+Validation - Task 1:
+  Classes: [1, 4] (2 classes)
+  Samples: 430
+
+Test: [Task 1]  [ 0/27]  eta: 0:00:08  Loss: 0.0209 (0.0209)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2994  data: 0.2044  max mem: 2370
+Test: [Task 1]  [10/27]  eta: 0:00:01  Loss: 0.0255 (0.0259)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.1057  data: 0.0187  max mem: 2370
+Test: [Task 1]  [20/27]  eta: 0:00:00  Loss: 0.0273 (0.0313)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.0863  data: 0.0002  max mem: 2370
+Test: [Task 1]  [26/27]  eta: 0:00:00  Loss: 0.0255 (0.0296)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.0865  data: 0.0001  max mem: 2370
+Test: [Task 1] Total time: 0:00:02 (0.0961 s / it)
+* Acc@1 100.000 Acc@5 100.000 loss 0.030
+[Average accuracy till task1]	Acc@1: 100.0000	Acc@5: 100.0000	Loss: 0.0296
+Task 2:
+  Train Classes: [1, 2, 4] (3 classes)
+  Val Classes: [2] (1 classes)
+  Training Samples: 540
+  Validation Samples: 215
+
+Train: Epoch[1/5]  [ 0/34]  eta: 0:00:10  Lr: 0.001000  Loss: 2.2297  Acc@1: 6.2500 (6.2500)  Acc@5: 100.0000 (100.0000)  time: 0.3003  data: 0.1629  max mem: 2371
+Train: Epoch[1/5]  [10/34]  eta: 0:00:03  Lr: 0.001000  Loss: 0.2746  Acc@1: 93.7500 (77.8409)  Acc@5: 100.0000 (100.0000)  time: 0.1504  data: 0.0150  max mem: 2372
+Train: Epoch[1/5]  [20/34]  eta: 0:00:02  Lr: 0.001000  Loss: 0.3868  Acc@1: 93.7500 (84.5238)  Acc@5: 100.0000 (100.0000)  time: 0.1353  data: 0.0001  max mem: 2372
+Train: Epoch[1/5]  [30/34]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0218  Acc@1: 93.7500 (88.5081)  Acc@5: 100.0000 (100.0000)  time: 0.1352  data: 0.0001  max mem: 2372
+Train: Epoch[1/5]  [33/34]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0841  Acc@1: 93.7500 (89.4444)  Acc@5: 100.0000 (100.0000)  time: 0.1343  data: 0.0001  max mem: 2372
+Train: Epoch[1/5] Total time: 0:00:04 (0.1411 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.0841  Acc@1: 93.7500 (89.4444)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[2/5]  [ 0/34]  eta: 0:00:10  Lr: 0.001000  Loss: -0.0639  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3029  data: 0.1660  max mem: 2376
+Train: Epoch[2/5]  [10/34]  eta: 0:00:03  Lr: 0.001000  Loss: -0.0989  Acc@1: 100.0000 (97.7273)  Acc@5: 100.0000 (100.0000)  time: 0.1506  data: 0.0152  max mem: 2376
+Train: Epoch[2/5]  [20/34]  eta: 0:00:02  Lr: 0.001000  Loss: -0.0956  Acc@1: 100.0000 (98.5119)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2376
+Train: Epoch[2/5]  [30/34]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1115  Acc@1: 100.0000 (98.5887)  Acc@5: 100.0000 (100.0000)  time: 0.1353  data: 0.0001  max mem: 2376
+Train: Epoch[2/5]  [33/34]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1120  Acc@1: 100.0000 (98.5185)  Acc@5: 100.0000 (100.0000)  time: 0.1337  data: 0.0001  max mem: 2376
+Train: Epoch[2/5] Total time: 0:00:04 (0.1404 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1120  Acc@1: 100.0000 (98.5185)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[3/5]  [ 0/34]  eta: 0:00:10  Lr: 0.001000  Loss: -0.1012  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3163  data: 0.1799  max mem: 2376
+Train: Epoch[3/5]  [10/34]  eta: 0:00:03  Lr: 0.001000  Loss: -0.0879  Acc@1: 100.0000 (99.4318)  Acc@5: 100.0000 (100.0000)  time: 0.1520  data: 0.0165  max mem: 2376
+Train: Epoch[3/5]  [20/34]  eta: 0:00:02  Lr: 0.001000  Loss: -0.1298  Acc@1: 100.0000 (99.7024)  Acc@5: 100.0000 (100.0000)  time: 0.1356  data: 0.0002  max mem: 2376
+Train: Epoch[3/5]  [30/34]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1289  Acc@1: 100.0000 (99.7984)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2376
+Train: Epoch[3/5]  [33/34]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1306  Acc@1: 100.0000 (99.8148)  Acc@5: 100.0000 (100.0000)  time: 0.1337  data: 0.0001  max mem: 2376
+Train: Epoch[3/5] Total time: 0:00:04 (0.1409 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1306  Acc@1: 100.0000 (99.8148)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[4/5]  [ 0/34]  eta: 0:00:10  Lr: 0.001000  Loss: -0.1322  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2973  data: 0.1603  max mem: 2376
+Train: Epoch[4/5]  [10/34]  eta: 0:00:03  Lr: 0.001000  Loss: -0.1295  Acc@1: 100.0000 (99.4318)  Acc@5: 100.0000 (100.0000)  time: 0.1502  data: 0.0147  max mem: 2376
+Train: Epoch[4/5]  [20/34]  eta: 0:00:02  Lr: 0.001000  Loss: -0.1357  Acc@1: 100.0000 (99.7024)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2376
+Train: Epoch[4/5]  [30/34]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0567  Acc@1: 100.0000 (99.3952)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2376
+Train: Epoch[4/5]  [33/34]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1432  Acc@1: 100.0000 (99.4444)  Acc@5: 100.0000 (100.0000)  time: 0.1337  data: 0.0001  max mem: 2376
+Train: Epoch[4/5] Total time: 0:00:04 (0.1404 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1432  Acc@1: 100.0000 (99.4444)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[5/5]  [ 0/34]  eta: 0:00:09  Lr: 0.001000  Loss: -0.1348  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2927  data: 0.1559  max mem: 2376
+Train: Epoch[5/5]  [10/34]  eta: 0:00:03  Lr: 0.001000  Loss: -0.1612  Acc@1: 100.0000 (99.4318)  Acc@5: 100.0000 (100.0000)  time: 0.1497  data: 0.0143  max mem: 2376
+Train: Epoch[5/5]  [20/34]  eta: 0:00:02  Lr: 0.001000  Loss: -0.1632  Acc@1: 100.0000 (99.7024)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0002  max mem: 2376
+Train: Epoch[5/5]  [30/34]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1643  Acc@1: 100.0000 (99.7984)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2376
+Train: Epoch[5/5]  [33/34]  eta: 0:00:00  Lr: 0.001000  Loss: 0.0431  Acc@1: 100.0000 (99.6296)  Acc@5: 100.0000 (100.0000)  time: 0.1337  data: 0.0001  max mem: 2376
+Train: Epoch[5/5] Total time: 0:00:04 (0.1402 s / it)
+Averaged stats: Lr: 0.001000  Loss: 0.0431  Acc@1: 100.0000 (99.6296)  Acc@5: 100.0000 (100.0000)
+Standard Deviation of Similarities for task 1: 0.1819
+/home/users/ntu/yhuang07/myenv/lib/python3.11/site-packages/sklearn/manifold/_t_sne.py:1164: FutureWarning: 'n_iter' was renamed to 'max_iter' in version 1.5 and will be removed in 1.7.
+  warnings.warn(
+torch.Size([10, 5, 768])
+Validation - Task 1:
+  Classes: [1, 4] (2 classes)
+  Samples: 430
+
+Test: [Task 1]  [ 0/27]  eta: 0:00:08  Loss: 0.0273 (0.0273)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2979  data: 0.2106  max mem: 2376
+Guess: 2 | Actual: 4
+Guess: 2 | Actual: 4
+Test: [Task 1]  [10/27]  eta: 0:00:01  Loss: 0.0089 (0.0316)  Acc@1: 100.0000 (98.8636)  Acc@5: 100.0000 (100.0000)  time: 0.1055  data: 0.0193  max mem: 2376
+Guess: 2 | Actual: 4
+Guess: 2 | Actual: 1
+Test: [Task 1]  [20/27]  eta: 0:00:00  Loss: 0.0096 (0.0436)  Acc@1: 100.0000 (98.8095)  Acc@5: 100.0000 (100.0000)  time: 0.0863  data: 0.0001  max mem: 2376
+Guess: 2 | Actual: 4
+Test: [Task 1]  [26/27]  eta: 0:00:00  Loss: 0.0096 (0.0382)  Acc@1: 100.0000 (98.8372)  Acc@5: 100.0000 (100.0000)  time: 0.0856  data: 0.0001  max mem: 2376
+Test: [Task 1] Total time: 0:00:02 (0.0955 s / it)
+* Acc@1 98.837 Acc@5 100.000 loss 0.038
+Validation - Task 2:
+  Classes: [2] (1 classes)
+  Samples: 215
+
+Test: [Task 2]  [ 0/14]  eta: 0:00:04  Loss: 0.0041 (0.0041)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2975  data: 0.2101  max mem: 2376
+Test: [Task 2]  [10/14]  eta: 0:00:00  Loss: 0.0058 (0.0068)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.1055  data: 0.0192  max mem: 2376
+Test: [Task 2]  [13/14]  eta: 0:00:00  Loss: 0.0057 (0.0081)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.0991  data: 0.0151  max mem: 2376
+Test: [Task 2] Total time: 0:00:01 (0.1024 s / it)
+* Acc@1 100.000 Acc@5 100.000 loss 0.008
+[Average accuracy till task2]	Acc@1: 99.4186	Acc@5: 100.0000	Loss: 0.0232	Forgetting: 1.1628	Backward: -1.1628
+Task 3:
+  Train Classes: [0, 1, 2, 4] (4 classes)
+  Val Classes: [0] (1 classes)
+  Training Samples: 560
+  Validation Samples: 215
+
+Train: Epoch[1/5]  [ 0/35]  eta: 0:00:10  Lr: 0.001000  Loss: 1.4383  Acc@1: 18.7500 (18.7500)  Acc@5: 100.0000 (100.0000)  time: 0.2911  data: 0.1536  max mem: 2376
+Train: Epoch[1/5]  [10/35]  eta: 0:00:03  Lr: 0.001000  Loss: -0.0151  Acc@1: 93.7500 (81.2500)  Acc@5: 100.0000 (100.0000)  time: 0.1496  data: 0.0141  max mem: 2376
+Train: Epoch[1/5]  [20/35]  eta: 0:00:02  Lr: 0.001000  Loss: -0.0884  Acc@1: 93.7500 (89.2857)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0002  max mem: 2376
+Train: Epoch[1/5]  [30/35]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0540  Acc@1: 100.0000 (91.7339)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2376
+Train: Epoch[1/5]  [34/35]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0485  Acc@1: 100.0000 (92.3214)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2376
+Train: Epoch[1/5] Total time: 0:00:04 (0.1412 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.0485  Acc@1: 100.0000 (92.3214)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[2/5]  [ 0/35]  eta: 0:00:10  Lr: 0.001000  Loss: -0.0232  Acc@1: 93.7500 (93.7500)  Acc@5: 100.0000 (100.0000)  time: 0.2988  data: 0.1620  max mem: 2376
+Train: Epoch[2/5]  [10/35]  eta: 0:00:03  Lr: 0.001000  Loss: -0.1206  Acc@1: 100.0000 (99.4318)  Acc@5: 100.0000 (100.0000)  time: 0.1504  data: 0.0149  max mem: 2376
+Train: Epoch[2/5]  [20/35]  eta: 0:00:02  Lr: 0.001000  Loss: 0.1658  Acc@1: 100.0000 (98.8095)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0002  max mem: 2376
+Train: Epoch[2/5]  [30/35]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1104  Acc@1: 100.0000 (98.7903)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2376
+Train: Epoch[2/5]  [34/35]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1314  Acc@1: 100.0000 (98.7500)  Acc@5: 100.0000 (100.0000)  time: 0.1353  data: 0.0001  max mem: 2376
+Train: Epoch[2/5] Total time: 0:00:04 (0.1414 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1314  Acc@1: 100.0000 (98.7500)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[3/5]  [ 0/35]  eta: 0:00:10  Lr: 0.001000  Loss: -0.0723  Acc@1: 93.7500 (93.7500)  Acc@5: 100.0000 (100.0000)  time: 0.2943  data: 0.1572  max mem: 2376
+Train: Epoch[3/5]  [10/35]  eta: 0:00:03  Lr: 0.001000  Loss: -0.1416  Acc@1: 100.0000 (97.7273)  Acc@5: 100.0000 (100.0000)  time: 0.1500  data: 0.0144  max mem: 2376
+Train: Epoch[3/5]  [20/35]  eta: 0:00:02  Lr: 0.001000  Loss: -0.1260  Acc@1: 100.0000 (98.8095)  Acc@5: 100.0000 (100.0000)  time: 0.1356  data: 0.0002  max mem: 2376
+Train: Epoch[3/5]  [30/35]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1328  Acc@1: 100.0000 (99.1935)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0001  max mem: 2376
+Train: Epoch[3/5]  [34/35]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1386  Acc@1: 100.0000 (99.2857)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2376
+Train: Epoch[3/5] Total time: 0:00:04 (0.1412 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1386  Acc@1: 100.0000 (99.2857)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[4/5]  [ 0/35]  eta: 0:00:11  Lr: 0.001000  Loss: -0.1537  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3179  data: 0.1804  max mem: 2376
+Train: Epoch[4/5]  [10/35]  eta: 0:00:03  Lr: 0.001000  Loss: -0.1437  Acc@1: 100.0000 (99.4318)  Acc@5: 100.0000 (100.0000)  time: 0.1522  data: 0.0165  max mem: 2376
+Train: Epoch[4/5]  [20/35]  eta: 0:00:02  Lr: 0.001000  Loss: -0.1161  Acc@1: 100.0000 (99.7024)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0002  max mem: 2376
+Train: Epoch[4/5]  [30/35]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1504  Acc@1: 100.0000 (99.7984)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0001  max mem: 2376
+Train: Epoch[4/5]  [34/35]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1494  Acc@1: 100.0000 (99.8214)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2376
+Train: Epoch[4/5] Total time: 0:00:04 (0.1418 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1494  Acc@1: 100.0000 (99.8214)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[5/5]  [ 0/35]  eta: 0:00:12  Lr: 0.001000  Loss: -0.1561  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3579  data: 0.2214  max mem: 2376
+Train: Epoch[5/5]  [10/35]  eta: 0:00:03  Lr: 0.001000  Loss: -0.1698  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.1559  data: 0.0203  max mem: 2376
+Train: Epoch[5/5]  [20/35]  eta: 0:00:02  Lr: 0.001000  Loss: -0.1215  Acc@1: 100.0000 (99.7024)  Acc@5: 100.0000 (100.0000)  time: 0.1356  data: 0.0001  max mem: 2376
+Train: Epoch[5/5]  [30/35]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1743  Acc@1: 100.0000 (99.7984)  Acc@5: 100.0000 (100.0000)  time: 0.1355  data: 0.0001  max mem: 2376
+Train: Epoch[5/5]  [34/35]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1166  Acc@1: 100.0000 (99.6429)  Acc@5: 100.0000 (100.0000)  time: 0.1354  data: 0.0001  max mem: 2376
+Train: Epoch[5/5] Total time: 0:00:05 (0.1429 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1166  Acc@1: 100.0000 (99.6429)  Acc@5: 100.0000 (100.0000)
+Standard Deviation of Similarities for task 2: 0.2032
+/home/users/ntu/yhuang07/myenv/lib/python3.11/site-packages/sklearn/manifold/_t_sne.py:1164: FutureWarning: 'n_iter' was renamed to 'max_iter' in version 1.5 and will be removed in 1.7.
+  warnings.warn(
+torch.Size([10, 5, 768])
+Validation - Task 1:
+  Classes: [1, 4] (2 classes)
+  Samples: 430
+
+Guess: 0 | Actual: 1
+Test: [Task 1]  [ 0/27]  eta: 0:00:07  Loss: 0.1837 (0.1837)  Acc@1: 93.7500 (93.7500)  Acc@5: 100.0000 (100.0000)  time: 0.2863  data: 0.1983  max mem: 2376
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 4
+Test: [Task 1]  [10/27]  eta: 0:00:01  Loss: 0.1349 (0.2062)  Acc@1: 93.7500 (93.1818)  Acc@5: 100.0000 (100.0000)  time: 0.1046  data: 0.0182  max mem: 2376
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Test: [Task 1]  [20/27]  eta: 0:00:00  Loss: 0.1473 (0.3288)  Acc@1: 87.5000 (89.8810)  Acc@5: 100.0000 (100.0000)  time: 0.0864  data: 0.0002  max mem: 2376
+Guess: 0 | Actual: 4
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Test: [Task 1]  [26/27]  eta: 0:00:00  Loss: 0.2229 (0.3118)  Acc@1: 87.5000 (90.0000)  Acc@5: 100.0000 (100.0000)  time: 0.0858  data: 0.0001  max mem: 2376
+Test: [Task 1] Total time: 0:00:02 (0.0951 s / it)
+* Acc@1 90.000 Acc@5 100.000 loss 0.312
+Validation - Task 2:
+  Classes: [2] (1 classes)
+  Samples: 215
+
+Test: [Task 2]  [ 0/14]  eta: 0:00:04  Loss: 0.0083 (0.0083)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2937  data: 0.2063  max mem: 2376
+Guess: 0 | Actual: 2
+Guess: 0 | Actual: 2
+Test: [Task 2]  [10/14]  eta: 0:00:00  Loss: 0.0135 (0.0510)  Acc@1: 100.0000 (98.8636)  Acc@5: 100.0000 (100.0000)  time: 0.1051  data: 0.0189  max mem: 2376
+Guess: 0 | Actual: 2
+Test: [Task 2]  [13/14]  eta: 0:00:00  Loss: 0.0135 (0.0748)  Acc@1: 100.0000 (98.6047)  Acc@5: 100.0000 (100.0000)  time: 0.0978  data: 0.0149  max mem: 2376
+Test: [Task 2] Total time: 0:00:01 (0.1011 s / it)
+* Acc@1 98.605 Acc@5 100.000 loss 0.075
+Validation - Task 3:
+  Classes: [0] (1 classes)
+  Samples: 215
+
+Test: [Task 3]  [ 0/14]  eta: 0:00:04  Loss: 0.0012 (0.0012)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3224  data: 0.2349  max mem: 2376
+Test: [Task 3]  [10/14]  eta: 0:00:00  Loss: 0.0012 (0.0018)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.1077  data: 0.0215  max mem: 2376
+Test: [Task 3]  [13/14]  eta: 0:00:00  Loss: 0.0012 (0.0016)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.0998  data: 0.0169  max mem: 2376
+Test: [Task 3] Total time: 0:00:01 (0.1030 s / it)
+* Acc@1 100.000 Acc@5 100.000 loss 0.002
+[Average accuracy till task3]	Acc@1: 96.2016	Acc@5: 100.0000	Loss: 0.1294	Forgetting: 5.6977	Backward: -5.6977
+Task 4:
+  Train Classes: [0, 1, 2, 3, 4] (5 classes)
+  Val Classes: [3] (1 classes)
+  Training Samples: 580
+  Validation Samples: 215
+
+Train: Epoch[1/5]  [ 0/37]  eta: 0:00:12  Lr: 0.001000  Loss: 1.9545  Acc@1: 6.2500 (6.2500)  Acc@5: 100.0000 (100.0000)  time: 0.3358  data: 0.1997  max mem: 2376
+Train: Epoch[1/5]  [10/37]  eta: 0:00:04  Lr: 0.001000  Loss: -0.0922  Acc@1: 93.7500 (76.1364)  Acc@5: 100.0000 (100.0000)  time: 0.1533  data: 0.0183  max mem: 2376
+Train: Epoch[1/5]  [20/37]  eta: 0:00:02  Lr: 0.001000  Loss: -0.1060  Acc@1: 93.7500 (86.0119)  Acc@5: 100.0000 (100.0000)  time: 0.1350  data: 0.0001  max mem: 2376
+Train: Epoch[1/5]  [30/37]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0270  Acc@1: 100.0000 (90.1210)  Acc@5: 100.0000 (100.0000)  time: 0.1349  data: 0.0001  max mem: 2376
+Train: Epoch[1/5]  [36/37]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1381  Acc@1: 100.0000 (91.2069)  Acc@5: 100.0000 (100.0000)  time: 0.1306  data: 0.0001  max mem: 2376
+Train: Epoch[1/5] Total time: 0:00:05 (0.1391 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1381  Acc@1: 100.0000 (91.2069)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[2/5]  [ 0/37]  eta: 0:00:11  Lr: 0.001000  Loss: -0.1290  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2981  data: 0.1604  max mem: 2376
+Train: Epoch[2/5]  [10/37]  eta: 0:00:04  Lr: 0.001000  Loss: -0.1259  Acc@1: 100.0000 (97.7273)  Acc@5: 100.0000 (100.0000)  time: 0.1500  data: 0.0147  max mem: 2376
+Train: Epoch[2/5]  [20/37]  eta: 0:00:02  Lr: 0.001000  Loss: -0.1394  Acc@1: 100.0000 (98.8095)  Acc@5: 100.0000 (100.0000)  time: 0.1351  data: 0.0002  max mem: 2376
+Train: Epoch[2/5]  [30/37]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1372  Acc@1: 100.0000 (98.1855)  Acc@5: 100.0000 (100.0000)  time: 0.1349  data: 0.0002  max mem: 2376
+Train: Epoch[2/5]  [36/37]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1528  Acc@1: 100.0000 (98.2759)  Acc@5: 100.0000 (100.0000)  time: 0.1301  data: 0.0001  max mem: 2376
+Train: Epoch[2/5] Total time: 0:00:05 (0.1381 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1528  Acc@1: 100.0000 (98.2759)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[3/5]  [ 0/37]  eta: 0:00:11  Lr: 0.001000  Loss: -0.1517  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3003  data: 0.1635  max mem: 2376
+Train: Epoch[3/5]  [10/37]  eta: 0:00:04  Lr: 0.001000  Loss: -0.1358  Acc@1: 100.0000 (99.4318)  Acc@5: 100.0000 (100.0000)  time: 0.1501  data: 0.0150  max mem: 2376
+Train: Epoch[3/5]  [20/37]  eta: 0:00:02  Lr: 0.001000  Loss: -0.1356  Acc@1: 100.0000 (99.1071)  Acc@5: 100.0000 (100.0000)  time: 0.1351  data: 0.0001  max mem: 2376
+Train: Epoch[3/5]  [30/37]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1734  Acc@1: 100.0000 (99.3952)  Acc@5: 100.0000 (100.0000)  time: 0.1350  data: 0.0001  max mem: 2376
+Train: Epoch[3/5]  [36/37]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1583  Acc@1: 100.0000 (99.3103)  Acc@5: 100.0000 (100.0000)  time: 0.1301  data: 0.0001  max mem: 2376
+Train: Epoch[3/5] Total time: 0:00:05 (0.1381 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1583  Acc@1: 100.0000 (99.3103)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[4/5]  [ 0/37]  eta: 0:00:14  Lr: 0.001000  Loss: -0.1628  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3908  data: 0.2548  max mem: 2376
+Train: Epoch[4/5]  [10/37]  eta: 0:00:04  Lr: 0.001000  Loss: -0.1592  Acc@1: 100.0000 (99.4318)  Acc@5: 100.0000 (100.0000)  time: 0.1583  data: 0.0233  max mem: 2376
+Train: Epoch[4/5]  [20/37]  eta: 0:00:02  Lr: 0.001000  Loss: -0.1477  Acc@1: 100.0000 (99.4048)  Acc@5: 100.0000 (100.0000)  time: 0.1350  data: 0.0002  max mem: 2376
+Train: Epoch[4/5]  [30/37]  eta: 0:00:01  Lr: 0.001000  Loss: -0.1689  Acc@1: 100.0000 (99.3952)  Acc@5: 100.0000 (100.0000)  time: 0.1349  data: 0.0001  max mem: 2376
+Train: Epoch[4/5]  [36/37]  eta: 0:00:00  Lr: 0.001000  Loss: -0.0214  Acc@1: 100.0000 (99.4828)  Acc@5: 100.0000 (100.0000)  time: 0.1300  data: 0.0001  max mem: 2376
+Train: Epoch[4/5] Total time: 0:00:05 (0.1404 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.0214  Acc@1: 100.0000 (99.4828)  Acc@5: 100.0000 (100.0000)
+Train: Epoch[5/5]  [ 0/37]  eta: 0:00:10  Lr: 0.001000  Loss: -0.1758  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2902  data: 0.1540  max mem: 2376
+Train: Epoch[5/5]  [10/37]  eta: 0:00:04  Lr: 0.001000  Loss: 0.0858  Acc@1: 100.0000 (98.2955)  Acc@5: 100.0000 (100.0000)  time: 0.1492  data: 0.0142  max mem: 2376
+Train: Epoch[5/5]  [20/37]  eta: 0:00:02  Lr: 0.001000  Loss: -0.1185  Acc@1: 100.0000 (98.8095)  Acc@5: 100.0000 (100.0000)  time: 0.1350  data: 0.0002  max mem: 2376
+Train: Epoch[5/5]  [30/37]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1513  Acc@1: 100.0000 (98.9919)  Acc@5: 100.0000 (100.0000)  time: 0.1349  data: 0.0001  max mem: 2376
+Train: Epoch[5/5]  [36/37]  eta: 0:00:00  Lr: 0.001000  Loss: -0.1825  Acc@1: 100.0000 (99.1379)  Acc@5: 100.0000 (100.0000)  time: 0.1301  data: 0.0001  max mem: 2376
+Train: Epoch[5/5] Total time: 0:00:05 (0.1378 s / it)
+Averaged stats: Lr: 0.001000  Loss: -0.1825  Acc@1: 100.0000 (99.1379)  Acc@5: 100.0000 (100.0000)
+Standard Deviation of Similarities for task 3: 0.2202
+/home/users/ntu/yhuang07/myenv/lib/python3.11/site-packages/sklearn/manifold/_t_sne.py:1164: FutureWarning: 'n_iter' was renamed to 'max_iter' in version 1.5 and will be removed in 1.7.
+  warnings.warn(
+torch.Size([10, 5, 768])
+Validation - Task 1:
+  Classes: [1, 4] (2 classes)
+  Samples: 430
+
+Test: [Task 1]  [ 0/27]  eta: 0:00:07  Loss: 0.0183 (0.0183)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2927  data: 0.2053  max mem: 2376
+Guess: 3 | Actual: 4
+Guess: 3 | Actual: 4
+Test: [Task 1]  [10/27]  eta: 0:00:01  Loss: 0.0168 (0.0541)  Acc@1: 100.0000 (98.8636)  Acc@5: 100.0000 (100.0000)  time: 0.1052  data: 0.0188  max mem: 2376
+Guess: 0 | Actual: 4
+Guess: 3 | Actual: 1
+Guess: 3 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 0 | Actual: 1
+Guess: 3 | Actual: 4
+Test: [Task 1]  [20/27]  eta: 0:00:00  Loss: 0.0168 (0.1153)  Acc@1: 100.0000 (97.6190)  Acc@5: 100.0000 (100.0000)  time: 0.0863  data: 0.0002  max mem: 2376
+Guess: 3 | Actual: 4
+Test: [Task 1]  [26/27]  eta: 0:00:00  Loss: 0.0181 (0.1032)  Acc@1: 100.0000 (97.9070)  Acc@5: 100.0000 (100.0000)  time: 0.0857  data: 0.0001  max mem: 2376
+Test: [Task 1] Total time: 0:00:02 (0.0949 s / it)
+* Acc@1 97.907 Acc@5 100.000 loss 0.103
+Validation - Task 2:
+  Classes: [2] (1 classes)
+  Samples: 215
+
+Test: [Task 2]  [ 0/14]  eta: 0:00:04  Loss: 0.0184 (0.0184)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.2981  data: 0.2107  max mem: 2376
+Guess: 3 | Actual: 2
+Guess: 3 | Actual: 2
+Guess: 3 | Actual: 2
+Guess: 3 | Actual: 2
+Guess: 0 | Actual: 2
+Guess: 3 | Actual: 2
+Guess: 3 | Actual: 2
+Guess: 3 | Actual: 2
+Test: [Task 2]  [10/14]  eta: 0:00:00  Loss: 0.0534 (0.1051)  Acc@1: 100.0000 (95.4545)  Acc@5: 100.0000 (100.0000)  time: 0.1055  data: 0.0193  max mem: 2376
+Guess: 3 | Actual: 2
+Guess: 3 | Actual: 2
+Guess: 3 | Actual: 2
+Test: [Task 2]  [13/14]  eta: 0:00:00  Loss: 0.0534 (0.1574)  Acc@1: 93.7500 (94.8837)  Acc@5: 100.0000 (100.0000)  time: 0.0981  data: 0.0151  max mem: 2376
+Test: [Task 2] Total time: 0:00:01 (0.1006 s / it)
+* Acc@1 94.884 Acc@5 100.000 loss 0.157
+Validation - Task 3:
+  Classes: [0] (1 classes)
+  Samples: 215
+
+Test: [Task 3]  [ 0/14]  eta: 0:00:04  Loss: 0.0044 (0.0044)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3296  data: 0.2416  max mem: 2376
+Guess: 3 | Actual: 0
+Guess: 3 | Actual: 0
+Guess: 3 | Actual: 0
+Guess: 1 | Actual: 0
+Test: [Task 3]  [10/14]  eta: 0:00:00  Loss: 0.0106 (0.0538)  Acc@1: 100.0000 (97.7273)  Acc@5: 100.0000 (100.0000)  time: 0.1084  data: 0.0221  max mem: 2376
+Test: [Task 3]  [13/14]  eta: 0:00:00  Loss: 0.0073 (0.0437)  Acc@1: 100.0000 (98.1395)  Acc@5: 100.0000 (100.0000)  time: 0.1004  data: 0.0174  max mem: 2376
+Test: [Task 3] Total time: 0:00:01 (0.1041 s / it)
+* Acc@1 98.140 Acc@5 100.000 loss 0.044
+Validation - Task 4:
+  Classes: [3] (1 classes)
+  Samples: 215
+
+Test: [Task 4]  [ 0/14]  eta: 0:00:04  Loss: 0.0013 (0.0013)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.3054  data: 0.2179  max mem: 2376
+Test: [Task 4]  [10/14]  eta: 0:00:00  Loss: 0.0005 (0.0008)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.1061  data: 0.0199  max mem: 2376
+Test: [Task 4]  [13/14]  eta: 0:00:00  Loss: 0.0005 (0.0010)  Acc@1: 100.0000 (100.0000)  Acc@5: 100.0000 (100.0000)  time: 0.0986  data: 0.0157  max mem: 2376
+Test: [Task 4] Total time: 0:00:01 (0.1019 s / it)
+* Acc@1 100.000 Acc@5 100.000 loss 0.001
+[Average accuracy till task4]	Acc@1: 97.7326	Acc@5: 100.0000	Loss: 0.0763	Forgetting: 3.0233	Backward: -3.0233
+Total training time: 0:03:06
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Resource Usage on 2025-05-09 09:50:00.383943:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	JobId: 10229727.pbs101
+	Project: personal-yhuang07
+	Exit Status: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	NCPUs: Requested(16), Used(16)
+	CPU Time Used: 00:05:49
+	Memory: Requested(110gb), Used(2748416kb)
+	Vmem Used: 3991916kb
+	Walltime: Requested(02:00:00), Used(00:03:39)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Execution Nodes Used: (x1000c1s3b0n1:ncpus=16:mem=115343360kb:ngpus=1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	GPU Duration: 3.68mins
+	GPU Power Consumed: 270.59W
+	GPU Max GPU Memory Used: 3.9GB
+	Memory Throughput Rate (Average): x1000c1s3b0n1:(gpu1:12%)
+	Memory Throughput Rate (Max): x1000c1s3b0n1:(gpu1:19%)
+	Memory Throughput Rate (Min): x1000c1s3b0n1:(gpu1:0%)
+	GPU SM Utilization (Average): x1000c1s3b0n1:(gpu1:76%)
+	GPU SM Utilization (Max): x1000c1s3b0n1:(gpu1:99%)
+	GPU SM Utilization (Min): x1000c1s3b0n1:(gpu1:0%)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Warning: None
+GPU application profile: High
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
